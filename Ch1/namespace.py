@@ -15,11 +15,11 @@ n = int(input())
 for i in range(n):
     query = input().split()
     if query[0] == 'create':
-        namespaces.update({query[1]: query[2]})
+        namespaces[query[1]] = query[2]
     if query[0] == 'add':
         if variables.get(query[1]):
             variables[query[1]].append(query[2]) #добавляем переменную в список переменных пространства
         else:
-            variables.update({query[1]: [query[2]]}) #создаём новый список с переменными для простарнства
+            variables[query[1]] = [query[2]] #создаём новый список с переменными для простарнства
     if query[0] == 'get':
         print(get(query[1], query[2]))

@@ -1,9 +1,7 @@
-import sys
-import re
-
-pattern = r'.*?cat.*?cat'
-
-for line in sys.stdin:
-    line = line.rstrip()
-    if re.search(pattern, line):
-        print(line)
+s = input()
+t = input()
+ans = 0
+while t in s:
+    ans += 1
+    s = s[s.find(t)+1:]
+print(ans)
